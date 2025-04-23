@@ -4,4 +4,4 @@
  To Run This Project: 
 
  1. Run `npm i`
- 2. 
+ 2. Run `npm run dev` command
