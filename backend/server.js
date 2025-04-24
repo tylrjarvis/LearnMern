@@ -6,11 +6,13 @@ dotenv.config(); // Load environment variables from .env
 
 const app = express();
 
-app.post("/products", async (req, res) => {
+app.use(express.json()); // allows us to parse json bodies in the request
+
+app.post("/api/products", async (req, res) => {
     const product = req.body;
 
     if(!product.name || !product.price || !product.image) {
-        return res.status(400).json({ success:falase, message: "Please provide all fields" });
+        return res.status(400).json({ success:false, message: "Please provide all fields" });
     }
 
     const newProduct = new Product(product);
