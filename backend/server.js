@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+import Product from "./models/product.model.js";
 
 dotenv.config(); // Load environment variables from .env
 
