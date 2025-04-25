@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import Product from "./models/product.model.js";
+import mongoose from "mongoose";
 
 dotenv.config(); // Load environment variables from .env
 
@@ -17,7 +18,7 @@ app.get("/api/products", async (req, res) => {
         console.log("Error fetching products", error.message);
         res.status(500).json({ success: false, message: "Server Error" });
     }
-})
+});
 
 app.post("/api/products", async (req, res) => {
     const product = req.body;
